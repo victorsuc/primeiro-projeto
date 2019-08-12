@@ -29,6 +29,7 @@ import { CamelCasePipe } from './camel-case.pipe';
 import { registerLocaleData } from '@angular/common';
 import localeBr from '@angular/common/locales/pt';
 import localeBrExtra from '@angular/common/locales/extra/pt';
+import { FiltroArrayPipe } from './filtro-array.pipe';
 
 registerLocaleData(localeBr, 'pt-BR', localeBrExtra);
 
@@ -52,7 +53,8 @@ registerLocaleData(localeBr, 'pt-BR', localeBrExtra);
     NgElseDirective,
     CriarCursoComponent,
     ExemplosPipesComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    FiltroArrayPipe
   ],
   imports: [
     BrowserModule,
