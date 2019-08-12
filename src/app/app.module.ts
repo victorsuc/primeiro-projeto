@@ -1,7 +1,8 @@
+import { SettingsService } from './settings.service';
 import { CursosService } from './cursos/cursos.service';
 import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,11 @@ import { CriarCursoComponent } from './criar-curso/criar-curso.component';
 import { LogService } from './shared/log.service';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './camel-case.pipe';
+import { registerLocaleData } from '@angular/common';
+import localeBr from '@angular/common/locales/pt';
+import localeBrExtra from '@angular/common/locales/extra/pt';
+
+registerLocaleData(localeBr, 'pt-BR', localeBrExtra);
 
 @NgModule({
   declarations: [
@@ -55,7 +61,19 @@ import { CamelCasePipe } from './camel-case.pipe';
     HttpClientModule,
     CursosModule
   ],
-  providers: [LogService],
+  providers: [
+    LogService,
+    /*{
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    }*/
+    SettingsService,
+    {
+      provide: LOCALE_ID,
+      deps: [SettingsService],
+      useFactory: (settingsService: SettingsService) => settingsService.getLocale()
+    }
+  ],
   //providers: [CursosService],
   bootstrap: [AppComponent]
 })
