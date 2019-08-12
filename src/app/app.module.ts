@@ -30,6 +30,7 @@ import { registerLocaleData } from '@angular/common';
 import localeBr from '@angular/common/locales/pt';
 import localeBrExtra from '@angular/common/locales/extra/pt';
 import { FiltroArrayPipe } from './filtro-array.pipe';
+import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
 
 registerLocaleData(localeBr, 'pt-BR', localeBrExtra);
 
@@ -54,7 +55,8 @@ registerLocaleData(localeBr, 'pt-BR', localeBrExtra);
     CriarCursoComponent,
     ExemplosPipesComponent,
     CamelCasePipe,
-    FiltroArrayPipe
+    FiltroArrayPipe,
+    FiltroArrayImpuroPipe
   ],
   imports: [
     BrowserModule,
