@@ -24,6 +24,7 @@ import { NgElseDirective } from './shared/ng-else.directive';
 import { CriarCursoComponent } from './criar-curso/criar-curso.component';
 import { LogService } from './shared/log.service';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
+import { CamelCasePipe } from './camel-case.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.componen
     HighlightDirective,
     NgElseDirective,
     CriarCursoComponent,
-    ExemplosPipesComponent
+    ExemplosPipesComponent,
+    CamelCasePipe
   ],
   imports: [
     BrowserModule,
