@@ -23,6 +23,7 @@ import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
 import { CriarCursoComponent } from './criar-curso/criar-curso.component';
 import { LogService } from './shared/log.service';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { LogService } from './shared/log.service';
     HighlightMouseDirective,
     HighlightDirective,
     NgElseDirective,
-    CriarCursoComponent
+    CriarCursoComponent,
+    ExemplosPipesComponent
   ],
   imports: [
     BrowserModule,
