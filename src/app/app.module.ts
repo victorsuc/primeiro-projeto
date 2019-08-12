@@ -1,3 +1,4 @@
+import { CursosService } from './cursos/cursos.service';
 import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -47,7 +48,7 @@ import { NgElseDirective } from './shared/ng-else.directive';
     HttpClientModule,
     CursosModule
   ],
-  providers: [],
+  providers: [CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
