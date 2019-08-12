@@ -3,9 +3,17 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CursosService {
 
-  constructor() { }
+  cursos: string[] = ['Java','Ext JS', 'Angular', '.NET'];
+
+  constructor() { 
+    console.log('CursosService');
+  }
   
   getCursos(){
-    return ['Java','Ext JS', 'Angular', '.NET'];
+    return this.cursos;
+  }
+
+  addCurso(curso: string){
+    this.cursos.push(curso);
   }
 }
